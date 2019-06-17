@@ -1,0 +1,23 @@
+
+#该方法是拿到字符串中为中文的字组
+#dat为从数据库中查询的字库字段
+f_name=os.path.join('user_dict.txt')
+f=open(f_name,'wb')
+for line in dat:
+        #reserve only chinese word!!
+        if type(line[0])==float or type(line[0])==int: continue
+        terms=line[0].strip().replace('/','').replace('-','').replace(' ','').replace('.','')
+        term_l = rechs.findall(terms)
+        if len(term_l)!=0: #has some chinese
+            for term in term_l:
+                f.write(term.encode('utf8')+'\n')
+        if (len(term_l)==0 or len(term_l[0]) == len(terms)): #all chinese or all englist
+            term=terms
+            if term not in thes:
+                thes[term]=[]
+            if line[2].strip():
+                ts=line[2].strip().replace(u'，',',').split()
+                thes[term]+=ts
+        else:  
+            logger.info(line[0])
+    f.close()
