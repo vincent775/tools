@@ -16,6 +16,23 @@
 
 　　　　我们要安装的是CPU版本，那么在命令下紧接着输入：
 
-　　　　pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/https://mirrors.tuna.tsinghua.edu.cn/tensorflow/windows/cpu/tensorflow-1.1.0-cp35-cp35m-win_amd64.whl
+　　　　pip install -i https://mirrors.tuna.tsinghua.edu.cn/tensorflow/windows/cpu/tensorflow-1.1.0-cp35-cp35m-win_amd64.whl
 
  　　　　你也可以自己选择对应的Tensorflow版本，可以在清华镜像中查看
+     
+     2.bert 支持更高版本的tensorflow，所以需要升级     
+         0、如何查看当前tensorflow版本：
+          python
+          import tensorflow as tf
+           tf.version
+         查询tensorflow安装路径为:
+           tf.path
+        1、使用pip可以安装特定版本的tensorflow，比如
+           pip install tensorflow-gpu==1.7.0
+        2、升级到最新GPU版本
+           pip  install --upgrade  tensorflow-gpu
+        3、升级到最新CPU版本
+          pip  install--upgrade tensorflow
+        4、如何降低自己的tensorflow版本？
+          如1 指定版本号 即可
+       
