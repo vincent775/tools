@@ -1,0 +1,21 @@
+1.安装Tensorflow
+
+　　　安装Tensorflow时，需要从Anaconda仓库中下载，一般默认链接的都是国外镜像地址，下载肯定很慢啊（跨国呢！），这里我是用国内清华镜像，需要改一下链接镜像的地址。这里，我们打开刚刚安装好的Anaconda中的 Anaconda Prompt，然后输入：
+
+　　　　conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ 　　　　conda config --set show_channel_urls yes
+
+　　　　这两行代码用来改成连接清华镜像的
+
+　　　　接下来安装Tensorflow，在Anaconda Prompt中输入：
+
+　　　　conda create -n tensorflow python=3.5.2
+    
+    看到上面这些activate tensorflow（这么直白的英语，看看是不是很激动，）恭喜你，tensorflow你已经安装成功啦，去激活一下，紧接着输入：
+    “activate tensorflow”
+    就Ok了
+
+　　　　我们要安装的是CPU版本，那么在命令下紧接着输入：
+
+　　　　pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/https://mirrors.tuna.tsinghua.edu.cn/tensorflow/windows/cpu/tensorflow-1.1.0-cp35-cp35m-win_amd64.whl
+
+ 　　　　你也可以自己选择对应的Tensorflow版本，可以在清华镜像中查看
